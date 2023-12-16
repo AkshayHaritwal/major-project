@@ -1,0 +1,80 @@
+
+  <% layout("/layouts/boilerplate") %> 
+  <body>
+    <br>
+    <div class="row">
+    
+      <div class="col-8 offset-2">
+    <h3 class="offset-4" style="color: rgb(254, 253, 255); background-color: rgb(255, 98, 0); display: inline; padding: 7px; border-radius: 5px;"><b>Create a New Listing</b></h3>
+    <br><br>
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">  <!-- yaha hamne form me nonvalidate keyword ko use kiya hai iski help se bootstrap ki nonvalidation wali property yaha add ho jaayegi then class de di hai non-validation naam se iski help styling apply ho jaayegi -->
+      <div class="mb-3">
+        
+        <label for="title" class="form-label">title</label>
+        <input name="listing[title]" placeholder="enter title" type="text" class="form-control" required/>
+        <div class="invalid-feedback">Title is required</div>  <!-- agar hum title ko empty chor dete hai to ye message show hoga and form submit nahi hoga -->
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">description</label>
+        <textarea
+          name="listing[description]"
+          class="form-control" 
+          required
+        ></textarea>
+        <div class="invalid-feedback">Description is required</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="Image" class="form-label">Upload Image</label>
+
+        
+          <input
+            name="listing[image]"
+            type="file" class="form-control"
+            required
+          />   <!--new image ka link dete samay "" nahi lagana hai -->
+
+      </div>
+
+
+
+      <div class="row">
+    
+      
+      <div class="mb-3 col-md-4">
+        <label for="Price" class="form-label">Price</label>
+
+        <input name="listing[price]" placeholder="enter price"  class="form-control" required />
+
+        <div class="invalid-feedback">price is required</div>
+      </div>
+      
+      
+      <div class="mb-3 col-md-8">
+        <label for="country" class="form-label">country</label>
+
+        <input name="listing[country]" placeholder="enter country" type="text"  class="form-control" required/>
+
+        <div class="invalid-feedback">country is is required</div>
+      </div>
+    </div>
+      
+      <div class="mb-3">
+        <label for="location" class="form-label">location</label>
+
+        <input
+          name="listing[location]"
+          placeholder="enter location"
+          type="text" class="form-control" required
+        />
+
+        <div class="invalid-feedback">location is required</div>
+      </div>
+    
+      <button class="btn btn-dark">Add</button>
+      <br><br>
+    </form>
+  </div>
+  </div>
+  </body>
+
